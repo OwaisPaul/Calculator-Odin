@@ -1,0 +1,20 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 15px;
+    gap: 1px;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+      
+}
+
+button {
+    border-radius: 40px;
+    height: 40px;
+    width: 40px;
+
+}
