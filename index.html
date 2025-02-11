@@ -8,11 +8,33 @@
 </head>
 <body>
     <div id="container">
-    <input type="text" id="display" readonly>
-    <div id="keys">
+    <input type="text" id="display" placeholder="0" readonly>
+    <div class="keys">
         
+        <button id="plus">+</button>
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+    
+   
+        <button id="minus">-</button>
+        <button id="four">4</button>
+        <button id="five">5</button>
+        <button id="six">6</button>
+        
+        <button id="multiply">x</button>
+        <button id="one">1</button>        
+        <button id="two">2</button>
+        <button id="three">3</button>
+              
+        <button id="division">/</button>
+        <button id="zero">0</button>
+        <button id="decimal">.</button>
+      
+        <button onClick = "clearDisplay()" id="clear">C</button>
+        <button id="equal" onClick="operate()">=</button>
     </div>
-</div>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
