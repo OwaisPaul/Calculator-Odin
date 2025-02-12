@@ -1,16 +1,11 @@
 const display = document.getElementById('display');
 
-let num1;
-let num2;
-let operator;
 
-function clearDisplay() {
-    display.value = '';
-}
+let num1 = '';
+let num2 = '';
+let operation = null;
+let resetDisplay = false;
 
-function onDisplay(num1,operator,num2){
-    display.value = num1,operator,num2;
-}
 
 function add(a,b){
     return a + b;
@@ -24,27 +19,72 @@ function multiply(a,b){
     return a * b;
 }
 function divide(a,b){
+    if(b === 0){
+        return "Error";
+    }
     return a / b;
 }
 
-function operate(num1,operator,num2){
-    switch(operator){
+function operate(num1,operation,num2){
+    switch(operation){
         case '+':
             return add(num1,num2);
-            break;
-        case '-':
+           case '-':
             return subtract(num1,num2);
-            break;
-        case '*':
+           case '*':
             return multiply(num1,num2);
-            break;
-        case '/': 
+           case '/': 
             return divide(num1,num2);
-            break;
-        default:
+           default:
             return 'Error';
-
     }
+}
 
+function clearDisplay() {
+    display.value = '';
+    num1 = '';
+    num2 = '';
+    operation = null;
+    resetDisplay = false;
+}
 
+function onDisplay(input){
+    if(resetDisplay){
+    display.value = '';
+    resetDisplay = false;
+    }
+    display.value += input;
+}
+
+function onNumber(number){
+    if(operation === null){
+        num1 += number;
+    } else {
+        num2 += number;
+    }
+    onDisplay(number);
+}
+
+function onOperator(operator){
+    if(num1 === '') return;
+    if(num2 !== '') {
+        calculate();
+    }
+    operation = operator;
+    resetDisplay = true;
+}
+
+function calculate(){
+    if(num1 === '' || num2 === '' || operation === null) return;
+
+    const number1 = parseFloat(num1);
+    const number2 = parseFloat(num2);
+
+    let result = operate(number1, operation, number2);
+    display.value = result;
+
+    num1 = result.toString();
+    num2 = '';
+    operation = null;
+    resetDisplay = true;
 }

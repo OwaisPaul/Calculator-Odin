@@ -11,28 +11,28 @@
     <input type="text" id="display" placeholder="0" readonly>
     <div class="keys">
         
-        <button id="plus">+</button>
-        <button id="seven">7</button>
-        <button id="eight">8</button>
-        <button id="nine">9</button>
+        <button id="plus" onclick ="onOperator('+')">+</button>
+        <button id="seven" onclick = "onNumber('7')">7</button>
+        <button id="eight" onclick = "onNumber('8')">8</button>
+        <button id="nine" onclick = "onNumber('9')">9</button>
     
    
-        <button id="minus">-</button>
-        <button id="four">4</button>
-        <button id="five">5</button>
-        <button id="six">6</button>
+        <button id="minus" onclick = "onOperator('-')">-</button>
+        <button id="four" onclick = "onNumber('4')">4</button>
+        <button id="five" onclick = "onNumber('5')">5</button>
+        <button id="six" onclick = "onNumber('6')">6</button>
         
-        <button id="multiply">x</button>
-        <button id="one">1</button>        
-        <button id="two">2</button>
-        <button id="three">3</button>
+        <button id="multiply" onclick = "onOperator('*')">x</button>
+        <button id="one" onclick = "onNumber('1')">1</button>        
+        <button id="two" onclick = "onNumber('2')">2</button>
+        <button id="three" onclick = "onNumber('3')">3</button>
               
-        <button id="division">/</button>
-        <button id="zero">0</button>
-        <button id="decimal">.</button>
+        <button id="division" onclick = "onOperator('/')">/</button>
+        <button id="zero" onclick = "onNumber('0')">0</button>
+        <button id="decimal" onclick = "onNumber('.')">.</button>
       
-        <button onClick = "clearDisplay()" id="clear">C</button>
-        <button id="equal" onClick="operate()">=</button>
+        <button id="clear" onclick = "clearDisplay()">C</button>
+        <button id="equal" onclick="calculate()">=</button>
     </div>
     </div>
     <script src="script.js" defer></script>
